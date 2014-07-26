@@ -3,18 +3,21 @@
 
 namespace acfr 
 {
-
     class thinner
     {
     public:
-        thinner(double ratio=0.5);
+        thinner(double rate=0.5);
         thinner(const thinner &t);
         ~thinner();
+        
+        bool keep();
 
     private:
-        double ratio_;
+        double rate_;
+        double acc_;
+        double samples_;
+        double kept_;
     };
-
 };
 
 #endif /* THINNER_H_ */
